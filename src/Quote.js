@@ -8,7 +8,6 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import axios from 'axios'
 
-//const PORT = process.env.PORT || 4000;  ?????need this???
 
 export default class Quote extends React.Component {
   
@@ -132,8 +131,9 @@ export default class Quote extends React.Component {
       side:this.state.side,
       sideCharge:this.state.sideCharge,
     };
+//const PORT = process.env.PORT || 4000;
 
-  axios.post(`http://${PORT}/quotes/add`, newQuote)
+  axios.post('/quotes/add', newQuote)
       .then(res => console.log(res.data));
   }
   render(){
