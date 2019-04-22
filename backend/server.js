@@ -66,7 +66,7 @@ quoteRoutes.route('/add').post(function(req, res) {
         });
 });
 
-app.use('/bookcases', quoteRoutes);
+app.use('/quotes', quoteRoutes);
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
