@@ -12,7 +12,7 @@ let Quote = require('./quote.model');
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/quotes', { useNewUrlParser: true });
+mongoose.connect(mongoDBURL, { useNewUrlParser: true })//'mongodb://127.0.0.1:27017/quotes', { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 connection.once('open', function() {
