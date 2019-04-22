@@ -1,0 +1,22 @@
+.quote {
+  color: red;
+  margin-left:0;
+  margin-right:0;
+  text-align: center;
+}
+
+button.tinyI.btn.btn-secondary {
+  background-color: #002366;
+  font-style: italic;
+  padding: 0 .4rem;
+  font-size: x-small;
+
+}
+
+.btn-toolbar {
+  display: inline;
+}
+
+.smallBox {
+  width: 4em;
+}
