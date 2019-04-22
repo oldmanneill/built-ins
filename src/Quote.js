@@ -133,7 +133,7 @@ export default class Quote extends React.Component {
     };
 //const PORT = process.env.PORT || 4000;
 
-  axios.post('https://pgh-built-ins.herokuapp.com/quotes/add', newQuote)
+  axios.post('https://pgh-built-ins.herokuapp.com/add', newQuote)
       .then(res => console.log(res.data));
   }
   render(){
