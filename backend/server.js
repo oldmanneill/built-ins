@@ -20,11 +20,11 @@ connection.once('open', function() {
 })
 
 quoteRoutes.route('/').get(function(req, res) {
-    Quote.find(function(err, quotes) {
+    Quote.find(function(err, bookcases) {
         if (err) {
             console.log(err);
         } else {
-            res.json(quotes);
+            res.json(bookcases);
         }
     });
 });
@@ -66,7 +66,7 @@ quoteRoutes.route('/add').post(function(req, res) {
         });
 });
 
-app.use('/quotes', quoteRoutes);
+app.use('/bookcases', quoteRoutes);
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
