@@ -56,7 +56,7 @@ connection.once('open', function() {
 // });
 app.use('/quotes', quoteRoutes);
 
-app.post('/quotes/add'),(function(req, res) {
+quoteRoutes.route('/add').post(function(req, res) {
     let quote = new Quote(req.body);
     quote.save()
         .then(quote => {
@@ -66,17 +66,6 @@ app.post('/quotes/add'),(function(req, res) {
             res.status(400).send('adding new quote failed');
         });
 });
-
-// app.post("/academypgh5", function(req, res) {
-//   Groups.create(req.body.classroom, function(err, newGroups) {
-//       if (err) {
-//           res.render("new");
-//       }
-//       else {
-//           res.redirect("/academypgh5");
-//       }
-//   });
-// });
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
