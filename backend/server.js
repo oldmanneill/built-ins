@@ -19,15 +19,15 @@ connection.once('open', function() {
     console.log("MongoDB database connection established successfully");
 })
 
-quoteRoutes.route('/').get(function(req, res) {
-    Quote.find(function(err, quotes) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.json(quotes);
-        }
-    });
-});
+// quoteRoutes.route('/').get(function(req, res) {
+//     Quote.find(function(err, quotes) {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             res.json(quotes);
+//         }
+//     });
+// });
 
 // todoRoutes.route('/:id').get(function(req, res) {
 //     let id = req.params.id;
