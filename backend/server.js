@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 const quoteRoutes = express.Router();
 const PORT = process.env.PORT || 4000;
 const mongoDBURL = `mongodb://mrneill:bookybook1@ds227185.mlab.com:27185/bookcases`
-console.log('oldmanneill!!!')
 
 let Quote = require('./quote.model');
 
@@ -57,8 +56,7 @@ connection.once('open', function() {
 // });
 app.use('/quotes', quoteRoutes);
 
-quoteRoutes.route('/add').post(function(req, res) {
-  debugger
+app.post('/quotes/add'),(function(req, res) {
     let quote = new Quote(req.body);
     quote.save()
         .then(quote => {
@@ -69,6 +67,16 @@ quoteRoutes.route('/add').post(function(req, res) {
         });
 });
 
+// app.post("/academypgh5", function(req, res) {
+//   Groups.create(req.body.classroom, function(err, newGroups) {
+//       if (err) {
+//           res.render("new");
+//       }
+//       else {
+//           res.redirect("/academypgh5");
+//       }
+//   });
+// });
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
