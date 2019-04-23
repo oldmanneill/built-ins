@@ -5,14 +5,14 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const quoteRoutes = express.Router();
 const PORT = process.env.PORT || 4000;
-const mongoDBURL = 'mongodb://M_LAB_USER:M_LAB_PASSWORD@ds227185.mlab.com:27185/bookcases'
+const mongoDBURL = `mongodb://${M_LAB_USER}:${M_LAB_PASSWORD}@ds227185.mlab.com:27185/bookcases'
 
 let Quote = require('./quote.model');
 
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect(mongoDBURL)//, { useNewUrlParser: true })//'mongodb://127.0.0.1:27017/quotes', { useNewUrlParser: true });
+mongoose.connect(mongoDBURL, { useNewUrlParser: true })//'mongodb://127.0.0.1:27017/quotes', { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 connection.once('open', function() {
@@ -56,6 +56,7 @@ quoteRoutes.route('/').get(function(req, res) {
 // });
 
 quoteRoutes.route('/add').post(function(req, res) {
+  debugger
     let quote = new Quote(req.body);
     quote.save()
         .then(quote => {
