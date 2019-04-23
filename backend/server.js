@@ -5,7 +5,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const quoteRoutes = express.Router();
 const PORT = process.env.PORT || 4000;
-const mongoDBURL = `mongodb://${M_LAB_USER}:${M_LAB_PASSWORD}@ds227185.mlab.com:27185/bookcases'
+const mongoDBURL = `mongodb://${M_LAB_USER}:${M_LAB_PASSWORD}@ds227185.mlab.com:27185/bookcases`
 
 let Quote = require('./quote.model');
 
